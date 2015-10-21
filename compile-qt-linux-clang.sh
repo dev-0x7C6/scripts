@@ -4,10 +4,11 @@ PLATFORM="${PLATFORM%%.sh}"
 ARCHIVE="tar.*"
 BUNDLE="qt-everywhere-opensource-src-"
 SOURCE=$(ls -r $BUNDLE*$ARCHIVE | head -n 1)
-TARGET=/tmp/build/${SOURCE%%.$ARCHIVE}
+TARGET=/tmp/build/${PLATFORM}/${SOURCE%%.$ARCHIVE}
 VERSION=${SOURCE##$BUNDLE}
 VERSION=${VERSION%%.$ARCHIVE}
 
+echo "Platform: ${PLATFORM}"
 echo "Selected version: ${VERSION}"
 
 if [ -z $SOURCE ]; then
