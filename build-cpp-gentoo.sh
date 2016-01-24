@@ -29,6 +29,7 @@ compile() {
 	pushd $workdir
 	git reset --hard
 	git clean -d -f -x
+	git pull
 
 	sed "s/${CXXFLAGS_MATCH}/${2}/g" cflags.pri > cflags.pri.bak
 	cp -f cflags.pri.bak cflags.pri
