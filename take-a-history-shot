@@ -1,0 +1,9 @@
+#!/bin/bash
+export HOME="/home/dev"
+export DISPLAY=:0
+WORKDIR="${HOME}/screenshots"
+
+mkdir -p "${WORKDIR}"
+pushd $WORKDIR
+scrot '%s.jpg'
+popd
