@@ -3,6 +3,8 @@ export HOME="/home/dev"
 export DISPLAY=:0
 WORKDIR="${HOME}/screenshots"
 
+[ -f "${HOME}/off" ] && exit
+
 mkdir -p "${WORKDIR}"
 pushd $WORKDIR
 scrot '%s.jpg'

@@ -20,7 +20,7 @@ mkdir -p $TARGET > /dev/null
 tar xf $SOURCE -C $TARGET --strip 1
 
 pushd "$TARGET"
-./configure -prefix /opt/qt/$VERSION-$PLATFORM -platform $PLATFORM -opensource -confirm-license -c++std c++14
+./configure -prefix /opt/qt/$VERSION-$PLATFORM -xplatform android-g++ -nomake tests -nomake examples -android-ndk /opt/android-ndk -android-sdk /opt/android-sdk-update-manager -android-ndk-host linux-x86_64 -android-toolchain-version 4.9 -skip qttranslations -no-warnings-are-errors -no-harfbuzz
 make -j6
 make -j1 install
 popd
